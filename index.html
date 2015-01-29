@@ -26,17 +26,40 @@
   <script type="text/x-handlebars" id="albums">
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span3">
-          <h3>Recent Albums</h3>
-          <div class="table">
+        <div class="span12">
+          <h2>Recent Albums</h2>
+
+          <table class="table">
             {{#each}}
-              <div>
-                {{name}} <small class="muted">by {{artist.name}}</small>
-              </div>
+              <tr>
+                <td>
+                  <h4>{{#link-to "album" this}}{{name}}{{/link-to}} <small class="muted">by {{artist.name}}</small></h4>
+                  <p>{{excerpt}}</p>
+                </td>
+              </tr>
             {{/each}}
-          </div>
+          </table>
         </div>
       </div>
+    </div>
+  </script>
+
+
+  <script type="text/x-handlebars" id="album">
+    <h1>{{name}}</h1>
+    <h3>by {{artist.name}} <small class="muted">{{date}}</small></h3>
+    <img {{bind-attr src=images.full}} alt="full">
+
+    <hr>
+
+    <div class="body">
+      {{body}}
+    </div>
+
+    <hr>
+
+    <div class="youtube">
+      <iframe width="480" height="360" {{bind-attr src=youtube}}" frameborder="0" allowfullscreen></iframe>
     </div>
   </script>
 
