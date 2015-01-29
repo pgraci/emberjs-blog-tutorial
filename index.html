@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Reggae101 - Phil's first Ember blog</title>
+  <title>Reggae101 - Phil's first Ember.js blog</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
@@ -13,11 +13,18 @@
       <div class="navbar-inner">
         <a class="brand" href="#">Reggae101</a>
         <ul class="nav">
-          <li><a href="#">Albums</a></li>
-          <li><a>About</a></li>
+          <li>{{#link-to 'albums'}}Albums{{/link-to}}</a></li>
+          <li>{{#link-to 'about'}}About{{/link-to}}</li>
         </ul>
       </div>
     </div>
+
+    {{outlet}}
+  </script>
+
+  <script type="text/x-handlebars" id="about">
+    <p>Welcome! You can learn about some classic rocksteady reggae albums on this site.</p>
+    <p>ps - this is my first Ember.js tutorial.</p>
   </script>
 
   <script src="js/libs/jquery-1.10.2.js"></script>
