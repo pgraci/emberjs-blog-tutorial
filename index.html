@@ -22,6 +22,24 @@
     {{outlet}}
   </script>
 
+
+  <script type="text/x-handlebars" id="albums">
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <h3>Recent Albums</h3>
+          <div class="table">
+            {{#each}}
+              <div>
+                {{name}} <small class="muted">by {{artist.name}}</small>
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
+
   <script type="text/x-handlebars" id="about">
     <p>Welcome! You can learn about some classic rocksteady reggae albums on this site.</p>
     <p>ps - this is my first Ember.js tutorial.</p>
